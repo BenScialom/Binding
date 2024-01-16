@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Binding.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <StackLayout HorizontalOptions="Center">
+        <Label
+            BindingContext="{x:Reference fontsize}"
+            FontSize="{Binding Value}"
+            Text="Petel" />
+        <Slider
+            x:Name="fontsize"
+            Maximum="70"
+            Minimum="10" />
+        <Slider
+            x:Name="rotation"
+            Maximum="360"
+            Minimum="0" />
+    </StackLayout>
+
+</ContentPage>
