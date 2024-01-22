@@ -4,19 +4,29 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <StackLayout HorizontalOptions="Center">
-        <Label
-            BindingContext="{x:Reference fontsize}"
-            FontSize="{Binding Value}"
-            Text="Petel" />
+
+    <StackLayout>
+        <Button
+            x:Name="btn"
+            Background="Beige"
+            FontSize="30"
+            HeightRequest="50"
+            Text="כפתור" />
+        <Label x:Name="Lbl" Text="Ben" />
         <Slider
-            x:Name="fontsize"
-            Maximum="70"
-            Minimum="10" />
+            x:Name="opacitySlider"
+            Margin="0,100,0,0"
+            BindingContext="{x:Reference Lbl}"
+            Maximum="1.0"
+            Minimum="0.0"
+            Value="{Binding Opacity, Mode=TwoWay}" />
         <Slider
-            x:Name="rotation"
+            x:Name="heightSlider"
+            BackgroundColor="CadetBlue"
+            BindingContext="{x:Reference btn}"
             Maximum="360"
-            Minimum="0" />
+            Minimum="0"
+            Value="{Binding HeightRequest, Mode=TwoWay}" />
     </StackLayout>
 
 </ContentPage>
