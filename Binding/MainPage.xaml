@@ -2,31 +2,25 @@
 <ContentPage
     x:Class="Binding.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:Binding.Models"
+    x:DataType="models:Student">
 
 
     <StackLayout>
         <Button
-            x:Name="btn"
-            Background="Beige"
+            x:Name="changeName"
+            Text ="Change name"
+            Background="CadetBlue"
             FontSize="30"
             HeightRequest="50"
-            Text="כפתור" />
-        <Label x:Name="Lbl" Text="Ben" />
-        <Slider
-            x:Name="opacitySlider"
-            Margin="0,100,0,0"
-            BindingContext="{x:Reference Lbl}"
-            Maximum="1.0"
-            Minimum="0.0"
-            Value="{Binding Opacity, Mode=TwoWay}" />
-        <Slider
-            x:Name="heightSlider"
-            BackgroundColor="CadetBlue"
-            BindingContext="{x:Reference btn}"
-            Maximum="360"
-            Minimum="0"
-            Value="{Binding HeightRequest, Mode=TwoWay}" />
+            HorizontalOptions="Center"
+            Clicked="ChangeName"
+            />
+        <Label x:Name="Lbl" Text="{Binding Name}" />
+        <Label x:Name="Lbl2" Text="{Binding Age}" />
+
+
     </StackLayout>
 
 </ContentPage>
